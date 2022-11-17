@@ -64,8 +64,11 @@ mqtt.on('disconnected', function() {
 	mqtt.connect();
 });
 
+// Since errors can be thrown very fast, you can include a timeout here
 mqtt.on('error', function() {
-	mqtt.connect();
+  setTimeout(function (){
+    mqtt.connect();
+  }, 1000);
 });
 ```
 

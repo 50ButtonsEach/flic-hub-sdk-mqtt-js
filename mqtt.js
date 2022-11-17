@@ -422,7 +422,6 @@ MQTT.prototype.connect = function (client) {
     } catch (e) {
       this.client = false;
       this.emit('error', e.message);
-      this.emit('disconnected');
     }
   }
 };
