@@ -415,7 +415,7 @@ MQTT.prototype.connect = function (client) {
   } else {
     try {
       var self = this;
-      client = require("net").Socket().connect({ host: mqo.server, port: mqo.port }, onConnect);
+      client = require("net").connect({ host: mqo.server, port: mqo.port }, onConnect);
       client.on('error', function (err) {
         self.emit('error', err.message);
       });
